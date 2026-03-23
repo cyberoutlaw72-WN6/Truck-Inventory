@@ -145,6 +145,18 @@
             '</section>';
     }
 
+    function scrollInventoryIntoView() {
+        var inventoryPanel = appRoot ? appRoot.querySelector('.inventory-panel') : null;
+        if (!inventoryPanel) {
+            return;
+        }
+
+        // Auto-scroll on narrower layouts where inventory sits below the view cards.
+        if (window.matchMedia('(max-width: 1180px)').matches) {
+            inventoryPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
     function initializeApp() {
         if (appRoot) {
             return;
@@ -166,6 +178,7 @@
 
             state.selectedCompartmentId = button.getAttribute('data-compartment-id');
             renderApp();
+            scrollInventoryIntoView();
         });
     }
 
