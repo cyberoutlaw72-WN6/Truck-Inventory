@@ -1,0 +1,15 @@
+# Node/Cordova
+**/node_modules/
+**/plugins/
+**/platforms/
+
+# Build artifacts
+**/build/
+**/dist/
+**/*.apk
+**/*.aab
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
