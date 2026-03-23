@@ -628,6 +628,11 @@ h1 {
     .page-header,
     .app-grid,
     .views-grid {
+
+    .page-header {
+        gap: 12px;
+        margin-bottom: 16px;
+    }
         grid-template-columns: 1fr;
     }
 
@@ -635,35 +640,100 @@ h1 {
         grid-column: auto;
     }
 
+
+    .hero-copy,
+    .hero-stats,
+    .view-card {
+        padding: 16px;
+    }
     .inventory-panel {
         position: static;
     }
 }
 
+    .view-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .view-badge {
+        align-self: flex-start;
+    }
+
+    .view-card {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .views-grid {
+        gap: 14px;
+    }
+
 @media (max-width: 720px) {
-    .shell {
-        padding: 16px 12px 28px;
+    .truck-stage--passenger {
+        min-width: 560px;
+        min-height: 272px;
+        aspect-ratio: auto;
     }
 
-    .hero-copy,
-    .hero-stats,
-    .view-card,
-    .inventory-panel {
-        border-radius: 22px;
-    }
-
-    .hero-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .truck-stage--driver,
-    .truck-stage--passenger,
     .truck-stage--rear {
-        min-height: 0;
-        aspect-ratio: 4 / 3;
+        min-width: 520px;
+        min-height: 300px;
+        aspect-ratio: auto;
+    }
+
+    .inventory-panel {
+        padding: 18px;
     }
 
     .compartment {
+        padding: 10px;
+        font-size: 0.76rem;
+        border-radius: 12px;
+    }
+
+    .compartment small {
+        font-size: 0.72rem;
+    }
+
+    .inventory-list li {
+        padding: 12px 0;
+    }
+
+    .inventory-list {
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .view-card {
+        padding: 14px;
+    }
+
+    .truck-stage--driver,
+    .truck-stage--passenger {
+        min-width: 520px;
+        min-height: 252px;
+    }
+
+    .truck-stage--rear {
+        min-width: 480px;
+        min-height: 280px;
+    }
+
+    .compartment {
+        padding: 8px;
+        font-size: 0.72rem;
+    }
+
+    .inventory-panel h3 {
+        font-size: 1.34rem;
+    }
+}
         padding: 8px 9px;
         font-size: 0.72rem;
     }
