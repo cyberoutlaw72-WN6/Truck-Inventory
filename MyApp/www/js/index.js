@@ -121,22 +121,12 @@
     function renderApp() {
         var data = getAppData();
         var selectedCompartment = getSelectedCompartment();
-        var allCompartments = getAllCompartments();
-        var totalEntries = allCompartments.reduce(function (total, compartment) {
-            return total + compartment.items.length;
-        }, 0);
 
         appRoot.innerHTML = '<section class="page-header">' +
             '<div class="hero-copy">' +
             '<p class="eyebrow">Apparatus Inventory</p>' +
             '<h1>' + escapeHtml(data.appName) + '</h1>' +
             '<p class="intro">' + escapeHtml(data.subtitle) + '</p>' +
-            '</div>' +
-            '<div class="hero-stats">' +
-            '<div class="stat-card"><strong>' + data.views.length + '</strong><span>views</span></div>' +
-            '<div class="stat-card"><strong>' + allCompartments.length + '</strong><span>compartments</span></div>' +
-            '<div class="stat-card"><strong>' + totalEntries + '</strong><span>entries</span></div>' +
-            '<div class="runtime-pill' + (state.deviceReady ? ' runtime-pill--live' : '') + '">' + (state.deviceReady ? 'Cordova device ready' : 'Browser preview') + '</div>' +
             '</div>' +
             '</section>' +
             '<section class="app-grid">' +
